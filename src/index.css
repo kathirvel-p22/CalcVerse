@@ -1,0 +1,1031 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Custom Theme Styles */
+.theme-light {
+  --bg-primary: #f9fafb;
+  --bg-secondary: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --card-bg: #ffffff;
+}
+
+.theme-dark {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: #374151;
+  --card-bg: #1f2937;
+}
+
+.theme-blue {
+  --bg-primary: #eff6ff;
+  --bg-secondary: #dbeafe;
+  --text-primary: #1e3a8a;
+  --text-secondary: #3b82f6;
+  --border-color: #bfdbfe;
+  --card-bg: #dbeafe;
+}
+
+.theme-green {
+  --bg-primary: #f0fdf4;
+  --bg-secondary: #dcfce7;
+  --text-primary: #14532d;
+  --text-secondary: #16a34a;
+  --border-color: #bbf7d0;
+  --card-bg: #dcfce7;
+}
+
+.theme-purple {
+  --bg-primary: #faf5ff;
+  --bg-secondary: #f3e8ff;
+  --text-primary: #581c87;
+  --text-secondary: #9333ea;
+  --border-color: #e9d5ff;
+  --card-bg: #f3e8ff;
+}
+
+.theme-orange {
+  --bg-primary: #fff7ed;
+  --bg-secondary: #fed7aa;
+  --text-primary: #9a3412;
+  --text-secondary: #ea580c;
+  --border-color: #fed7aa;
+  --card-bg: #fed7aa;
+}
+
+.theme-pink {
+  --bg-primary: #fdf2f8;
+  --bg-secondary: #fce7f3;
+  --text-primary: #be185d;
+  --text-secondary: #ec4899;
+  --border-color: #f9a8d4;
+  --card-bg: #fce7f3;
+}
+
+.theme-teal {
+  --bg-primary: #f0fdfa;
+  --bg-secondary: #ccfbf1;
+  --text-primary: #0f766e;
+  --text-secondary: #14b8a6;
+  --border-color: #a7f3d0;
+  --card-bg: #ccfbf1;
+}
+
+/* Apply theme variables globally to both html and body */
+.theme-light,
+.theme-light body {
+  --bg-primary: #f9fafb;
+  --bg-secondary: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --card-bg: #ffffff;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-dark,
+.theme-dark body {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: #374151;
+  --card-bg: #1f2937;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-blue,
+.theme-blue body {
+  --bg-primary: #eff6ff;
+  --bg-secondary: #dbeafe;
+  --text-primary: #1e3a8a;
+  --text-secondary: #3b82f6;
+  --border-color: #bfdbfe;
+  --card-bg: #dbeafe;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-green,
+.theme-green body {
+  --bg-primary: #f0fdf4;
+  --bg-secondary: #dcfce7;
+  --text-primary: #14532d;
+  --text-secondary: #16a34a;
+  --border-color: #bbf7d0;
+  --card-bg: #dcfce7;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-purple,
+.theme-purple body {
+  --bg-primary: #faf5ff;
+  --bg-secondary: #f3e8ff;
+  --text-primary: #581c87;
+  --text-secondary: #9333ea;
+  --border-color: #e9d5ff;
+  --card-bg: #f3e8ff;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-orange,
+.theme-orange body {
+  --bg-primary: #fff7ed;
+  --bg-secondary: #fed7aa;
+  --text-primary: #9a3412;
+  --text-secondary: #ea580c;
+  --border-color: #fed7aa;
+  --card-bg: #fed7aa;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-pink,
+.theme-pink body {
+  --bg-primary: #fdf2f8;
+  --bg-secondary: #fce7f3;
+  --text-primary: #be185d;
+  --text-secondary: #ec4899;
+  --border-color: #f9a8d4;
+  --card-bg: #fce7f3;
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #f9a8d4 100%) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-teal,
+.theme-teal body {
+  --bg-primary: #f0fdfa;
+  --bg-secondary: #ccfbf1;
+  --text-primary: #0f766e;
+  --text-secondary: #14b8a6;
+  --border-color: #a7f3d0;
+  --card-bg: #ccfbf1;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Force all text to be black for better readability across all themes */
+.theme-light *,
+.theme-dark *,
+.theme-blue *,
+.theme-green *,
+.theme-purple *,
+.theme-orange *,
+.theme-pink *,
+.theme-teal * {
+  color: #000000 !important;
+}
+
+/* Force all form elements to have black text */
+.theme-light input,
+.theme-light textarea,
+.theme-light select,
+.theme-dark input,
+.theme-dark textarea,
+.theme-dark select,
+.theme-blue input,
+.theme-blue textarea,
+.theme-blue select,
+.theme-green input,
+.theme-green textarea,
+.theme-green select,
+.theme-purple input,
+.theme-purple textarea,
+.theme-purple select,
+.theme-orange input,
+.theme-orange textarea,
+.theme-orange select,
+.theme-pink input,
+.theme-pink textarea,
+.theme-pink select,
+.theme-teal input,
+.theme-teal textarea,
+.theme-teal select {
+  color: #000000 !important;
+}
+
+/* Global form element text color override */
+input, textarea, select {
+  color: #000000 !important;
+}
+
+/* Global text override for any remaining elements */
+.theme-light .theme-gallery *,
+.theme-dark .theme-gallery *,
+.theme-blue .theme-gallery *,
+.theme-green .theme-gallery *,
+.theme-purple .theme-gallery *,
+.theme-orange .theme-gallery *,
+.theme-pink .theme-gallery *,
+.theme-teal .theme-gallery * {
+  color: #000000 !important;
+}
+
+
+
+/* Full page layout and theme application */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Global theme application for all elements */
+.theme-light {
+  --global-bg: #f9fafb;
+  --global-text: #111827;
+  --global-border: #e5e7eb;
+  --global-card: #ffffff;
+  --global-hover: #f3f4f6;
+  --global-accent: #3b82f6;
+}
+
+.theme-dark {
+  --global-bg: #111827;
+  --global-text: #f9fafb;
+  --global-border: #374151;
+  --global-card: #1f2937;
+  --global-hover: #374151;
+  --global-accent: #60a5fa;
+}
+
+.theme-blue {
+  --global-bg: #eff6ff;
+  --global-text: #1e3a8a;
+  --global-border: #bfdbfe;
+  --global-card: #dbeafe;
+  --global-hover: #bfdbfe;
+  --global-accent: #2563eb;
+}
+
+.theme-green {
+  --global-bg: #f0fdf4;
+  --global-text: #14532d;
+  --global-border: #bbf7d0;
+  --global-card: #dcfce7;
+  --global-hover: #bbf7d0;
+  --global-accent: #16a34a;
+}
+
+.theme-purple {
+  --global-bg: #faf5ff;
+  --global-text: #581c87;
+  --global-border: #e9d5ff;
+  --global-card: #f3e8ff;
+  --global-hover: #e9d5ff;
+  --global-accent: #9333ea;
+}
+
+.theme-orange {
+  --global-bg: #fff7ed;
+  --global-text: #9a3412;
+  --global-border: #fed7aa;
+  --global-card: #fed7aa;
+  --global-hover: #fed7aa;
+  --global-accent: #ea580c;
+}
+
+.theme-pink {
+  --global-bg: #fdf2f8;
+  --global-text: #be185d;
+  --global-border: #f9a8d4;
+  --global-card: #fce7f3;
+  --global-hover: #f9a8d4;
+  --global-accent: #ec4899;
+}
+
+.theme-teal {
+  --global-bg: #f0fdfa;
+  --global-text: #0f766e;
+  --global-border: #a7f3d0;
+  --global-card: #ccfbf1;
+  --global-hover: #a7f3d0;
+  --global-accent: #14b8a6;
+}
+
+/* Apply global theme variables to all elements */
+.theme-light,
+.theme-dark,
+.theme-blue,
+.theme-green,
+.theme-purple,
+.theme-orange,
+.theme-pink,
+.theme-teal {
+  background-color: var(--global-bg) !important;
+  /* color: var(--global-text) !important; */ /* Removed to maintain black text */
+}
+
+/* Specific element theming - FORM ELEMENTS MUST HAVE BLACK TEXT */
+.theme-light input,
+.theme-light textarea,
+.theme-light select {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  color: #000000 !important;
+}
+
+.theme-dark input,
+.theme-dark textarea,
+.theme-dark select {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  color: #000000 !important;
+}
+
+.theme-blue input,
+.theme-blue textarea,
+.theme-blue select {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  color: #000000 !important;
+}
+
+.theme-green input,
+.theme-green textarea,
+.theme-green select {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  color: #000000 !important;
+}
+
+.theme-purple input,
+.theme-purple textarea,
+.theme-purple select {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  color: #000000 !important;
+}
+
+.theme-orange input,
+.theme-orange textarea,
+.theme-orange select {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  color: #000000 !important;
+}
+
+.theme-pink input,
+.theme-pink textarea,
+.theme-pink select {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  color: #000000 !important;
+}
+
+.theme-teal input,
+.theme-teal textarea,
+.theme-teal select {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  color: #000000 !important;
+}
+
+/* Button theming */
+.theme-light button {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  /* color: var(--global-text) !important; */ /* Removed to maintain black text */
+}
+
+.theme-dark button {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  /* color: var(--global-text) !important; */ /* Removed to maintain black text */
+}
+
+.theme-blue button {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  /* color: var(--global-text) !important; */ /* Removed to maintain black text */
+}
+
+.theme-green button {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  /* color: var(--global-text) !important; */ /* Removed to maintain black text */
+}
+
+.theme-purple button {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  /* color: var(--global-text) !important; */ /* Removed to maintain black text */
+}
+
+.theme-orange button {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  /* color: var(--global-text) !important; */ /* Removed to maintain black text */
+}
+
+.theme-pink button {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  /* color: var(--global-text) !important; */ /* Removed to maintain black text */
+}
+
+.theme-teal button {
+  background-color: var(--global-card) !important;
+  border-color: var(--global-border) !important;
+  /* color: var(--global-text) !important; */ /* Removed to maintain black text */
+}
+
+/* Link theming */
+.theme-light a {
+  color: var(--global-accent) !important;
+}
+
+.theme-dark a {
+  color: var(--global-accent) !important;
+}
+
+.theme-blue a {
+  color: var(--global-accent) !important;
+}
+
+.theme-green a {
+  color: var(--global-accent) !important;
+}
+
+.theme-purple a {
+  color: var(--global-accent) !important;
+}
+
+.theme-orange a {
+  color: var(--global-accent) !important;
+}
+
+.theme-pink a {
+  color: var(--global-accent) !important;
+}
+
+.theme-teal a {
+  color: var(--global-accent) !important;
+}
+
+/* Enhanced Welcome Section - Hero Style - Full Viewport */
+.welcome-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: #000000 !important;
+  border: none !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 2rem !important;
+}
+
+.welcome-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+}
+
+.welcome-section h1 {
+  color: #000000 !important;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.8) !important;
+  font-weight: 900 !important;
+  font-size: 4.5rem !important;
+  line-height: 1 !important;
+  letter-spacing: -0.025em !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.welcome-section p {
+  color: #000000 !important;
+  opacity: 0.95 !important;
+  font-size: 1.5rem !important;
+  line-height: 1.8 !important;
+  font-weight: 500 !important;
+  max-width: 48rem !important;
+  margin: 0 auto 3rem auto !important;
+}
+
+.welcome-search-bar {
+  position: relative !important;
+  max-width: 32rem !important;
+  margin: 0 auto !important;
+}
+
+.welcome-search-bar input {
+  background-color: white !important;
+  color: #1f2937 !important;
+  border: 3px solid white !important;
+  border-radius: 9999px !important;
+  font-size: 1.25rem !important;
+  padding: 1.25rem 2rem !important;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+  width: 100% !important;
+  transition: all 0.3s ease !important;
+}
+
+.welcome-search-bar input:focus {
+  outline: none !important;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15), 0 0 0 4px rgba(255,255,255,0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+.welcome-search-bar button {
+  background-color: #2563eb !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 1.125rem !important;
+  border-radius: 9999px !important;
+  padding: 0.75rem 2rem !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+  position: absolute !important;
+  right: 0.75rem !important;
+  top: 0.75rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.welcome-search-bar button:hover {
+  background-color: #1d4ed8 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3) !important;
+}
+
+/* Quick Stats Styling */
+.welcome-section .text-3xl {
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.welcome-section .text-lg {
+  font-size: 1.125rem !important;
+  opacity: 0.9 !important;
+}
+
+/* Background Pattern Circles */
+.welcome-section .absolute div {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 50% !important;
+}
+
+/* Ensure welcome section maintains proper styling */
+.theme-light .welcome-section,
+.theme-dark .welcome-section,
+.theme-blue .welcome-section,
+.theme-green .welcome-section,
+.theme-purple .welcome-section,
+.theme-orange .welcome-section,
+.theme-pink .welcome-section,
+.theme-teal .welcome-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .welcome-section h1 {
+    font-size: 3rem !important;
+  }
+
+  .welcome-section p {
+    font-size: 1.25rem !important;
+  }
+
+  .welcome-search-bar input {
+    font-size: 1rem !important;
+    padding: 1rem 1.5rem !important;
+  }
+
+  .welcome-search-bar button {
+    font-size: 1rem !important;
+    padding: 0.5rem 1.5rem !important;
+  }
+}
+
+/* Override specific component styles for themes */
+.theme-light .bg-gray-50 { background-color: var(--bg-primary); }
+.theme-light .bg-white { background-color: var(--bg-secondary); }
+.theme-light .text-gray-800 { color: var(--text-primary); }
+.theme-light .text-gray-600 { color: var(--text-secondary); }
+.theme-light .border-gray-200 { border-color: var(--border-color); }
+
+.theme-dark .bg-gray-900 { background-color: var(--bg-primary); }
+.theme-dark .bg-gray-800 { background-color: var(--bg-secondary); }
+.theme-dark .text-white { color: var(--text-primary); }
+.theme-dark .text-gray-300 { color: var(--text-secondary); }
+.theme-dark .border-gray-700 { border-color: var(--border-color); }
+
+.theme-blue .bg-blue-50 { background-color: var(--bg-primary); }
+.theme-blue .bg-blue-100 { background-color: var(--bg-secondary); }
+.theme-blue .text-blue-900 { color: var(--text-primary); }
+.theme-blue .text-blue-700 { color: var(--text-secondary); }
+.theme-blue .border-blue-200 { border-color: var(--border-color); }
+
+.theme-green .bg-green-50 { background-color: var(--bg-primary); }
+.theme-green .bg-green-100 { background-color: var(--bg-secondary); }
+.theme-green .text-green-900 { color: var(--text-primary); }
+.theme-green .text-green-700 { color: var(--text-secondary); }
+.theme-green .border-green-200 { border-color: var(--border-color); }
+
+.theme-purple .bg-purple-50 { background-color: var(--bg-primary); }
+.theme-purple .bg-purple-100 { background-color: var(--bg-secondary); }
+.theme-purple .text-purple-900 { color: var(--text-primary); }
+.theme-purple .text-purple-700 { color: var(--text-secondary); }
+.theme-purple .border-purple-200 { border-color: var(--border-color); }
+
+.theme-orange .bg-orange-50 { background-color: var(--bg-primary); }
+.theme-orange .bg-orange-100 { background-color: var(--bg-secondary); }
+.theme-orange .text-orange-900 { color: var(--text-primary); }
+.theme-orange .text-orange-700 { color: var(--text-secondary); }
+.theme-orange .border-orange-200 { border-color: var(--border-color); }
+
+.theme-pink .bg-pink-50 { background-color: var(--bg-primary); }
+.theme-pink .bg-pink-100 { background-color: var(--bg-secondary); }
+.theme-pink .text-pink-900 { color: var(--text-primary); }
+.theme-pink .text-pink-700 { color: var(--text-secondary); }
+.theme-pink .border-pink-200 { border-color: var(--border-color); }
+
+/* Special Pink Theme Enhancements */
+.theme-pink {
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 30%, #f9a8d4 70%, #ec4899 100%) !important;
+  position: relative !important;
+}
+
+.theme-pink::before {
+  content: '' !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: radial-gradient(circle at 25% 25%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(249, 168, 212, 0.1) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+.theme-pink .bg-white {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(252,231,243,0.9) 100%) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.theme-pink button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 16px rgba(236, 72, 153, 0.3) !important;
+}
+
+.theme-pink a:hover {
+  color: #ec4899 !important;
+  text-shadow: 0 0 8px rgba(236, 72, 153, 0.5) !important;
+}
+
+/* Home page and Card component text overrides for all themes */
+.theme-light .text-gray-800,
+.theme-light .text-gray-700,
+.theme-light .text-gray-600,
+.theme-light .text-gray-900,
+.theme-dark .text-gray-800,
+.theme-dark .text-gray-700,
+.theme-dark .text-gray-600,
+.theme-dark .text-gray-900,
+.theme-blue .text-gray-800,
+.theme-blue .text-gray-700,
+.theme-blue .text-gray-600,
+.theme-blue .text-gray-900,
+.theme-green .text-gray-800,
+.theme-green .text-gray-700,
+.theme-green .text-gray-600,
+.theme-green .text-gray-900,
+.theme-purple .text-gray-800,
+.theme-purple .text-gray-700,
+.theme-purple .text-gray-600,
+.theme-purple .text-gray-900,
+.theme-orange .text-gray-800,
+.theme-orange .text-gray-700,
+.theme-orange .text-gray-600,
+.theme-orange .text-gray-900,
+.theme-pink .text-gray-800,
+.theme-pink .text-gray-700,
+.theme-pink .text-gray-600,
+.theme-pink .text-gray-900,
+.theme-teal .text-gray-800,
+.theme-teal .text-gray-700,
+.theme-teal .text-gray-600,
+.theme-teal .text-gray-900 {
+  color: #000000 !important;
+}
+
+/* Card component specific overrides */
+.theme-light .bg-white,
+.theme-dark .bg-white,
+.theme-blue .bg-white,
+.theme-green .bg-white,
+.theme-purple .bg-white,
+.theme-orange .bg-white,
+.theme-pink .bg-white,
+.theme-teal .bg-white {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.theme-light .bg-gray-800,
+.theme-dark .bg-gray-800,
+.theme-blue .bg-gray-800,
+.theme-green .bg-gray-800,
+.theme-purple .bg-gray-800,
+.theme-orange .bg-gray-800,
+.theme-pink .bg-gray-800,
+.theme-teal .bg-gray-800 {
+  background-color: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.theme-light .border-gray-300,
+.theme-light .border-gray-600,
+.theme-dark .border-gray-300,
+.theme-dark .border-gray-600,
+.theme-blue .border-gray-300,
+.theme-blue .border-gray-600,
+.theme-green .border-gray-300,
+.theme-green .border-gray-600,
+.theme-purple .border-gray-300,
+.theme-purple .border-gray-600,
+.theme-orange .border-gray-300,
+.theme-orange .border-gray-600,
+.theme-pink .border-gray-300,
+.theme-pink .border-gray-600,
+.theme-teal .border-gray-300,
+.theme-teal .border-gray-600 {
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Theme Gallery - Force all text to be black for better readability */
+.theme-light .theme-gallery *,
+.theme-dark .theme-gallery *,
+.theme-blue .theme-gallery *,
+.theme-green .theme-gallery *,
+.theme-purple .theme-gallery *,
+.theme-orange .theme-gallery *,
+.theme-pink .theme-gallery *,
+.theme-teal .theme-gallery * {
+  color: #000000 !important;
+}
+
+/* Theme Gallery specific text overrides */
+.theme-light .theme-gallery h3,
+.theme-light .theme-gallery h4,
+.theme-light .theme-gallery p,
+.theme-light .theme-gallery span,
+.theme-light .theme-gallery div,
+.theme-dark .theme-gallery h3,
+.theme-dark .theme-gallery h4,
+.theme-dark .theme-gallery p,
+.theme-dark .theme-gallery span,
+.theme-dark .theme-gallery div,
+.theme-blue .theme-gallery h3,
+.theme-blue .theme-gallery h4,
+.theme-blue .theme-gallery p,
+.theme-blue .theme-gallery span,
+.theme-blue .theme-gallery div,
+.theme-green .theme-gallery h3,
+.theme-green .theme-gallery h4,
+.theme-green .theme-gallery p,
+.theme-green .theme-gallery span,
+.theme-green .theme-gallery div,
+.theme-purple .theme-gallery h3,
+.theme-purple .theme-gallery h4,
+.theme-purple .theme-gallery p,
+.theme-purple .theme-gallery span,
+.theme-purple .theme-gallery div,
+.theme-orange .theme-gallery h3,
+.theme-orange .theme-gallery h4,
+.theme-orange .theme-gallery p,
+.theme-orange .theme-gallery span,
+.theme-orange .theme-gallery div,
+.theme-pink .theme-gallery h3,
+.theme-pink .theme-gallery h4,
+.theme-pink .theme-gallery p,
+.theme-pink .theme-gallery span,
+.theme-pink .theme-gallery div,
+.theme-teal .theme-gallery h3,
+.theme-teal .theme-gallery h4,
+.theme-teal .theme-gallery p,
+.theme-teal .theme-gallery span,
+.theme-teal .theme-gallery div {
+  color: #000000 !important;
+}
+
+/* Advanced Theme Transitions */
+.theme-light,
+.theme-dark,
+.theme-blue,
+.theme-green,
+.theme-purple,
+.theme-orange,
+.theme-pink,
+.theme-teal {
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.theme-light *,
+.theme-dark *,
+.theme-blue *,
+.theme-green *,
+.theme-purple *,
+.theme-orange *,
+.theme-pink *,
+.theme-teal * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Theme Switch Animation */
+@keyframes themeSwitch {
+  0% { opacity: 0.8; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.theme-light,
+.theme-dark,
+.theme-blue,
+.theme-green,
+.theme-purple,
+.theme-orange,
+.theme-pink,
+.theme-teal {
+  animation: themeSwitch 0.3s ease-out;
+}
+
+/* Enhanced Theme Feedback */
+.theme-selector-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-selector-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.theme-selector-button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Theme Persistence Indicator */
+.theme-persisted {
+  position: relative;
+}
+
+.theme-persisted::after {
+  content: '💾';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 12px;
+  background: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Advanced Theme Loading States */
+.theme-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.theme-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: themeLoading 1s linear infinite;
+}
+
+@keyframes themeLoading {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.theme-teal .bg-teal-50 { background-color: var(--bg-primary); }
+.theme-teal .bg-teal-100 { background-color: var(--bg-secondary); }
+.theme-teal .text-teal-900 { color: var(--text-primary); }
+.theme-teal .text-teal-700 { color: var(--text-secondary); }
+.theme-teal .border-teal-200 { border-color: var(--border-color); }
