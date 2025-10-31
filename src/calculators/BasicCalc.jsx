@@ -81,7 +81,7 @@ const BasicCalc = () => {
       </div>
 
       <div className="mb-4">
-        <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded text-right text-2xl font-mono text-gray-800 dark:text-white">
+        <div className="bg-white dark:bg-gray-800 p-4 rounded text-right text-2xl font-mono text-gray-800 dark:text-white border-2 border-gray-200 dark:border-gray-600">
           {display}
         </div>
       </div>
